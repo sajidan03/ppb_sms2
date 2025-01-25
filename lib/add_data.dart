@@ -14,7 +14,7 @@ class AddData extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -77,7 +77,9 @@ class AddData extends StatelessWidget {
                   decoration: InputDecoration(
                       suffixIcon: Icon(Icons.visibility),
                       label: Text("Password"),
-                      border: OutlineInputBorder(),               
+                      // border: OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(18)),
                       contentPadding: EdgeInsets.only(left: 14)),
                 ),
               ),
@@ -97,6 +99,8 @@ class AddData extends StatelessWidget {
                   },
                   child: Text("Tambah"),
                   style: ElevatedButton.styleFrom(
+                      shape: ContinuousRectangleBorder(
+                          borderRadius: BorderRadius.circular(28)),
                       backgroundColor: Colors.teal,
                       foregroundColor: Colors.white),
                 ),

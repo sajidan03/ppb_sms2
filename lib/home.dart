@@ -20,17 +20,56 @@ class Home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Align(
-                alignment: Alignment.center,
+                alignment: Alignment.centerLeft,
                 child: Text(
-                  'Selamat datang',
+                  'Login Page',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontSize: 22,
                       color: Colors.teal),
                 ),
               ),
               SizedBox(
                 height: 20,
+              ),
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                ),
+                child: TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.supervised_user_circle),
+                      label: Text("Username"),
+                      // border: OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16)),
+                      contentPadding: EdgeInsets.only(left: 14)),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                ),
+                child: TextFormField(
+                  obscureText: true,
+                  keyboardType: TextInputType.visiblePassword,
+                  decoration: InputDecoration(
+                      suffixIcon: Icon(Icons.visibility),
+                      label: Text("Password"),
+                      // border: OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16)),
+                      contentPadding: EdgeInsets.only(left: 14)),
+                ),
+              ),
+              SizedBox(
+                height: 24,
               ),
               Container(
                 width: double.infinity,
@@ -48,6 +87,8 @@ class Home extends StatelessWidget {
                   },
                   child: Text('Masuk'),
                   style: ElevatedButton.styleFrom(
+                    shape: ContinuousRectangleBorder(
+                        borderRadius: BorderRadius.circular(28)),
                     backgroundColor: Colors.teal,
                     foregroundColor: Colors.white,
                   ),
